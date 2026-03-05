@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8534935965832638713}
   - component: {fileID: 8525517903232369372}
   - component: {fileID: 5930415053325091641}
-  - component: {fileID: 3194897297776419609}
   m_Layer: 10
   m_Name: spikeHead
   m_TagString: Untagged
@@ -151,65 +150,41 @@ MonoBehaviour:
       m_Calls: []
   nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
   holdTime: 0.1
-  triggerEnterMatches: []
+  triggerEnterMatches:
+  - nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
+    canRepeat: 0
+    repeatTime: 0
+    workEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 67e20ecb057292c4c90095425e922da3, type: 2}
+          m_TargetAssemblyTypeName: SimpleFloatData, Assembly-CSharp
+          m_MethodName: UpdateValue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SimpleImageBehaviour, Assembly-CSharp
+          m_MethodName: UpdateWithFloatData
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    repeatEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    delayedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   triggerExitMatches: []
---- !u!114 &3194897297776419609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8806063176435134794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a28a400391344b9c88e28b4820b5ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHoldTime: 0.1
-  awakeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  startEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 67e20ecb057292c4c90095425e922da3, type: 2}
-        m_TargetAssemblyTypeName: SimpleFloatData, Assembly-CSharp
-        m_MethodName: UpdateValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SimpleImageBehaviour, Assembly-CSharp
-        m_MethodName: UpdateWithFloatData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  triggerEnterRepeatEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerEnterEndEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerHoldTime: 0.01
-  repeatHoldTime: 0.01
-  exitHoldTime: 0.01
-  canRepeat: 0
-  repeatTimes: 10
