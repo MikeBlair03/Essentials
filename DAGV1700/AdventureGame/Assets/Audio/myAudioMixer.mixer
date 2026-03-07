@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: specialMusic
+  m_Name: glow
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 5a18869b26b8f9948bcae27191a025e5
   m_Children: []
@@ -44,6 +44,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 1257954017879711753}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -56,7 +57,7 @@ AudioMixerController:
     - 5a18869b26b8f9948bcae27191a025e5
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 1257954017879711753}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -101,7 +102,21 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 57ebb3708df878245bd17c653968af48
-  m_FloatValues: {}
+  m_FloatValues:
+    205e867fa111f1c45aa392369188fb74: -80
+  m_TransitionOverrides: {}
+--- !u!245 &1257954017879711753
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: glow_snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 5df600bf4897b6549ba0ea15ba6e9e30
+  m_FloatValues:
+    005f7a2cbffbf52448a258fb6997aec4: -4.560346
+    205e867fa111f1c45aa392369188fb74: 10.437403
   m_TransitionOverrides: {}
 --- !u!243 &3932781545505226705
 AudioMixerGroupController:
