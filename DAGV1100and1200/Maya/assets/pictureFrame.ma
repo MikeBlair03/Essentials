@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: pictureFrame.ma
-//Last modified: Mon, Mar 16, 2026 08:54:16 PM
+//Last modified: Tue, Mar 17, 2026 09:00:24 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "5873A47D-45F3-592B-E5C4-C0A48E3AFFAC";
+fileInfo "UUID" "25EA635E-4280-4017-88E1-05B3B2CF7625";
 createNode transform -n "pictureFrame";
 	rename -uid "610DEFEA-41ED-9555-C98D-CE967504543C";
 	setAttr ".rp" -type "double3" -1.4210854715202004e-14 0 0 ;
@@ -205,8 +205,8 @@ createNode mesh -n "pictureFrameShape" -p "pictureFrame";
 createNode transform -s -n "persp";
 	rename -uid "71545B10-46A1-00E1-4496-A9AC97283B7B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 4.6918585882542896 1.9048565096635017 7.3364548043253546 ;
-	setAttr ".r" -type "double3" -12.338352729666282 32.600000000003178 0 ;
+	setAttr ".t" -type "double3" 6.0066507972212895 3.5885650474445092 5.5233985489944795 ;
+	setAttr ".r" -type "double3" -23.738352729694764 47.400000000001285 2.3494368421401717e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D41AFAD4-40E2-9C63-8368-00954F22D814";
 	setAttr -k off ".v" no;
@@ -264,20 +264,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "0AD382C5-4796-AA9A-58A7-0B84BBE406FC";
+	rename -uid "8F763FFC-43B6-BCF5-134C-ECBD7C4D3C72";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0DAB80CA-4902-8524-3272-3BB6FD5CE3F2";
+	rename -uid "99C43A7F-40CA-599A-99AD-4F97A5655BD6";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "1F341188-4653-A9C3-53A8-18A833F08180";
+	rename -uid "B6BDFA5B-45D1-F1BC-40EF-31BED55A6BF5";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "58BC0CB6-4A42-E956-6EEA-78B684A95C44";
+	rename -uid "F42BC4E2-4B79-1BB8-CB55-31AF4CE702BF";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "CA91A168-4D5B-161E-1C58-B49A7381805E";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "97263664-4FBB-CFC1-030C-4FBABD342A74";
+	rename -uid "D232911C-43E3-32DD-39C3-4BBF12CB14A0";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7099AFCB-4266-EE58-9A23-2AAB985EE428";
 	setAttr ".g" yes;

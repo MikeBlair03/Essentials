@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: standingLamp.ma
-//Last modified: Mon, Mar 16, 2026 08:52:47 PM
+//Last modified: Tue, Mar 17, 2026 09:02:50 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "8DF1218C-4380-FC2B-BADA-71907B324C9E";
+fileInfo "UUID" "CEAF57EB-46C3-9B9B-98B7-EF85C70EE533";
 createNode transform -n "standingLamp";
 	rename -uid "2B75CB30-42C0-AC6F-A429-FAB5C2C48E04";
 	setAttr ".rp" -type "double3" 0 -8.8817841970012523e-16 0 ;
@@ -1187,18 +1187,18 @@ createNode mesh -n "standingLampShape" -p "standingLamp";
 createNode transform -s -n "persp";
 	rename -uid "8EDF6014-47FC-37BE-277F-17BF07EF4A0F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.8337358428661492 6.5545160753888982 11.586136761857365 ;
-	setAttr ".r" -type "double3" -1.7999999999991037 -380.39999999985253 -5.302157456878117e-17 ;
+	setAttr ".t" -type "double3" 2.4718439868322113 12.813058268948595 15.967140760129391 ;
+	setAttr ".r" -type "double3" -26.999999999999435 -351.19999999985021 -4.0230511756922512e-16 ;
 	setAttr ".rpt" -type "double3" -2.820834766231827e-18 9.5062122080338248e-18 5.1249412597563262e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "ABC30C03-44E5-F899-B20F-7D8D59BA7E20";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 11.55343387017848;
+	setAttr ".coi" 18.133805253467706;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -1.1818963053188777e-15 4.5804829597473145 -1.6596534197293547e-18 ;
+	setAttr ".tp" -type "double3" 0 4.5804829597473145 0 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "E535FBC0-4A44-696D-BFF2-86A1AF7F3BB2";
@@ -1248,20 +1248,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1B04FABC-410E-C871-3323-F4B5BDAC1E3A";
+	rename -uid "A9810902-404C-FF91-A28F-44A9F8B28831";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "314F5666-42C9-A239-C2F1-6E8EFB3FB519";
+	rename -uid "60826B7A-43D6-A512-B2E8-D5920B1E993D";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "6E0E821F-45E5-93AD-1576-2ABF24B04594";
+	rename -uid "94F9BB33-4A41-F2C3-F5B1-74B5FFB7C1AD";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F89A6106-4D63-664B-E8E8-228573CFF5FD";
+	rename -uid "C68BD1F6-4168-884D-D1BB-4FA1BF038E31";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "AFE01AC4-4AEC-D3C2-EF54-47BFBC66E4D8";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "55DBD928-4EA4-F8A5-3D7C-149439D31974";
+	rename -uid "C56FDCF3-4CBA-5FC5-1AF0-90A469E5F24E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "21F70B20-44EC-E1E2-F981-BFBC4C3D800B";
 	setAttr ".g" yes;

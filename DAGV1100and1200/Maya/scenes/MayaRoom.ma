@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: MayaRoom.ma
-//Last modified: Mon, Mar 16, 2026 07:30:15 PM
+//Last modified: Tue, Mar 17, 2026 09:37:25 PM
 //Codeset: 1252
 file -rdi 1 -ns "chair" -rfn "chairRN" -op "v=0;" -typ "mayaAscii" "C:/Users/micha/Documents/School Stuff/GitHub/Essentials/DAGV1100and1200/Maya//assets/chair.ma";
 file -rdi 1 -ns "standingLamp" -rfn "standingLampRN" -op "v=0;" -typ "mayaAscii"
@@ -49,19 +49,19 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "0CA6F3A2-46BF-6BB3-FBAB-F0BFB5949313";
+fileInfo "UUID" "1BF12324-4C1A-3653-8F2A-C697E3C6D071";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "5E4D92CF-41D3-2FE4-3B11-4FACDAD60EA9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.384136565542249 23.062182524526015 24.958116541953824 ;
-	setAttr ".r" -type "double3" -25.200000000016711 -1035.1999999999784 2.241182251250445e-15 ;
+	setAttr ".t" -type "double3" 20.935471232178639 19.136550620879923 22.404814055569908 ;
+	setAttr ".r" -type "double3" -22.200000000000959 -1036.3999999999182 2.1959943839536245e-15 ;
 	setAttr ".rpt" -type "double3" 5.8281831499921437e-17 3.7742681611571101e-17 5.6752520001215166e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "08982F85-483C-5C1A-AFFF-7E97BD22A86A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 38.873221707966536;
+	setAttr ".coi" 33.415611380513994;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -116,20 +116,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "4924AF6D-421B-9B32-CE9E-AFBD4F18A830";
+	rename -uid "F4BBAECE-463B-B693-A566-E1ABBF18B11F";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "903C982F-4789-A803-DF8D-D0A9B7931BCF";
+	rename -uid "823E484B-4A64-E046-5476-DDB7D42BC509";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "809FC6C5-434C-0E5C-56F4-2E8359285B8C";
+	rename -uid "A13EFE5D-42C2-DA20-E047-FDABE7EC755C";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "19769F93-4268-D3BB-3C20-78AC6B3435D9";
+	rename -uid "3139BA42-4AC4-BAD0-D16A-DDA37E857767";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "E253F8AF-4C11-86DA-B9AB-249BCE00A29A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "16E25F95-4738-FA05-7E32-6D9DFF22DB99";
+	rename -uid "F1DD8E63-4B3A-C3CD-4F6E-BFAA77477444";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "583DF101-45BD-573A-A7FA-A9958C6B24CF";
 	setAttr ".g" yes;
@@ -353,7 +353,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 11 ".r";
+	setAttr -s 14 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -361,7 +361,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 17 ".dsm";
+	setAttr -s 15 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 6 ".gn";
 select -ne :initialParticleSE;
