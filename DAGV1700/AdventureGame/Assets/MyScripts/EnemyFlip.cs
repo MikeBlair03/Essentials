@@ -3,28 +3,24 @@ using UnityEngine.AI;
 
 public class EnemyFlip : MonoBehaviour
 {
-    public GameObject test;
-    public NavMeshAgent agent;
-    public SpriteRenderer sprite;
-
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private NavMeshAgent agent;
+    [SerializeField]
+    private SpriteRenderer sprite;
 
     void Update()
     {
         if (agent != null)
         {
-            int dir = int(agent.velocity.normalized);
+            int dir = Mathf.RoundToInt(agent.velocity.x);
 
             if (dir == -1)
             {
-            sprite.flipX = true;
+            sprite.flipX = false;
             }
             else if (dir == 1)
             {
-            sprite.flipX = false;
+            sprite.flipX = true;
             }
         }
         
