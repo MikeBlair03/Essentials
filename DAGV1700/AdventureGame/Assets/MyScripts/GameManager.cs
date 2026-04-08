@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public SimpleFloatData playerHealth;
+    public IntData playerScore;
 
     private bool paused = false;
     private bool playerDead = false;
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField]
     private ParticleSystem playerBlood;
+    [SerializeField]
+    private ParticleSystem playerCoinSpill;
     [SerializeField]
     private FlipTransformBehaviour flip;
     [SerializeField]
@@ -74,7 +77,11 @@ public class GameManager : MonoBehaviour
         flip.enabled = false;
         flip1.enabled = false;
         yield return new WaitForSeconds(1f);
-        playerBlood.Emit(30);
+        if (playerScore.Value >= 1)
+        {
+            playerCoinSpill.Emit(15);
+        }
+        playerBlood.Emit(15);
         playerSprite.SetActive(false);
         yield return new WaitForSeconds(1.5f);
 
