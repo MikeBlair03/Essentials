@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public SimpleFloatData playerHealth;
     public IntData playerScore;
+    public Vector3 camPauseOffset;
 
     private bool paused = false;
     private bool playerDead = false;
@@ -14,6 +15,10 @@ public class GameManager : MonoBehaviour
     private GameObject pausePanel;
     [SerializeField]
     private AudioSource bgm;
+    [SerializeField]
+    private Camera cam;
+    [SerializeField]
+    private ItemFollow camFollow;
     [SerializeField]
     private CharacterController charaController;
     [SerializeField]
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
         if (playerHealth.value <= 0f && !playerDead)
         {
             playerDead = true;
+            cam.orthographicSize = Mathf.Clamp(3f, 3f, 5f);
             StartCoroutine(PlayerDeath());
         }
     }
@@ -60,12 +66,16 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             pausePanel.SetActive(true);
             bgm.Pause();
+            cam.orthographicSize = Mathf.Clamp(3f, 3f, 5f);
+            camFollow.offset += camPauseOffset;
         }
         else
         {
             Time.timeScale = 1f;
             pausePanel.SetActive(false);
             bgm.Play();
+            cam.orthographicSize = Mathf.Clamp(5f, 3f, 5f);
+            camFollow.offset -= camPauseOffset;
         }
     }
 

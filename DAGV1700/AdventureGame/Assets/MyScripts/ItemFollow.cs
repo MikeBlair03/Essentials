@@ -9,7 +9,7 @@ public class ItemFollow : MonoBehaviour
     void LateUpdate()
     {
         Vector3 targetPos = target.position + offset;
-
+        
         Vector3 followPos = Vector3.Lerp(transform.position, targetPos, speed);
         transform.position = followPos;
     }

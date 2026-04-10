@@ -7249,10 +7249,10 @@ RectTransform:
   - {fileID: 433726581}
   m_Father: {fileID: 1790456870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: -1200, y: -50}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: -25}
+  m_SizeDelta: {x: 775, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218615675
 MonoBehaviour:
@@ -9970,6 +9970,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!198 &519086123 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2922302845805932947, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+  m_PrefabInstance: {fileID: 2546548035992468321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &522065172
 GameObject:
   m_ObjectHideFlags: 0
@@ -12683,7 +12688,7 @@ MonoBehaviour:
   startEvent:
     m_PersistentCalls:
       m_Calls: []
-  nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
+  nameIdObj: {fileID: 0}
   holdTime: 0.1
   triggerEnterMatches: []
   triggerExitMatches:
@@ -13808,8 +13813,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 11400000, guid: 67e20ecb057292c4c90095425e922da3, type: 2}
   playerScore: {fileID: 11400000, guid: 081d360d2552b064bbfccbebdcd65a28, type: 2}
+  camPauseOffset: {x: 2.25, y: -0.75, z: 0}
   pausePanel: {fileID: 218615673}
   bgm: {fileID: 633053919}
+  cam: {fileID: 2049245940}
+  camFollow: {fileID: 2049245942}
   charaController: {fileID: 1454419252}
   controllerScript: {fileID: 1454419251}
   playerSprite: {fileID: 2040399122}
@@ -25098,6 +25106,148 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1626047175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4619171846597842867, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+  m_PrefabInstance: {fileID: 2546548035992468321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1626047178 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8464623821360289258, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+  m_PrefabInstance: {fileID: 2546548035992468321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1626047179 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 566205066244519852, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+  m_PrefabInstance: {fileID: 2546548035992468321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626047181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626047175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c956dfee3a37a45dd99f9f346b9ff541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nameIdObj: {fileID: 0}
+  holdTime: 0.1
+  triggerEnterMatches:
+  - nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
+    canRepeat: 0
+    repeatTime: 0
+    workEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1626047178}
+          m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+          m_MethodName: WakeUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 519086123}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Emit
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1626047179}
+          m_TargetAssemblyTypeName: UnityEngine.BoxCollider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    repeatEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    delayedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  triggerExitMatches: []
+--- !u!114 &1626047182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626047175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a28a400391344b9c88e28b4820b5ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHoldTime: 0.1
+  awakeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1626047178}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: Sleep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1626047179}
+        m_TargetAssemblyTypeName: UnityEngine.BoxCollider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterRepeatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerHoldTime: 0.01
+  repeatHoldTime: 0.01
+  exitHoldTime: 0.01
+  canRepeat: 0
+  repeatTimes: 10
 --- !u!1 &1626557958
 GameObject:
   m_ObjectHideFlags: 0
@@ -27845,8 +27995,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 9
-  far clip plane: 1000
+  near clip plane: 3
+  far clip plane: 700
   field of view: 43
   orthographic: 1
   orthographic size: 5
@@ -28964,10 +29114,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingBlock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5486823859111908177, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4619171846597842867, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626047181}
+    - targetCorrespondingSourceObject: {fileID: 4619171846597842867, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626047182}
   m_SourcePrefab: {fileID: 100100000, guid: b51bed320ee5def4994fb0aba1db027f, type: 3}
 --- !u!212 &2851268124146845426
 SpriteRenderer:
