@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CharacterController charaController;
     [SerializeField]
-    private SimpleCharacterController controllerScript;
+    private BetterCharacterController controllerScript;
     [SerializeField]
     private GameObject playerSprite;
     [SerializeField]

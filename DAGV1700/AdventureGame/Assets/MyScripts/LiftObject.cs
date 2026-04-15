@@ -3,6 +3,9 @@ using UnityEngine;
 public class LiftObject : MonoBehaviour
 {
     public Transform carrySpace;
+    public Transform throwDownSpace;
+    public BetterCharacterController charaController;
+    public KeyCode throwButton;
 
     private GameObject liftableObject;
     private GameObject heldObject;
@@ -20,15 +23,14 @@ public class LiftObject : MonoBehaviour
 
         if (canLift && Input.GetKeyDown(KeyCode.E))
         {
-            //Debug.Log("lifting object");
             holdObject();
         }
 
-        if (heldObject != null && Input.GetKeyDown(KeyCode.F))
+        if (heldObject != null && Input.GetKeyDown(throwButton) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
-            //Debug.Log("throwing object");
-            throwObject();
+            throwDown();
         }
+        else if (heldObject != null && Input.GetKeyDown(throwButton)) throwObject();
     }
 
     private void CheckDirection()
@@ -61,6 +63,23 @@ public class LiftObject : MonoBehaviour
         Vector3 throwForce = (moveDir * forwardForce + transform.up * upwardForce);
 
         heldObjectRb.AddForce(throwForce, ForceMode.Impulse);
+
+        heldObject = null;
+        heldObjectRb = null;
+    }
+
+    private void throwDown()
+    {
+        heldObject.transform.SetParent(throwDownSpace, true);
+        heldObject.transform.position = throwDownSpace.position;
+
+        heldObject.transform.SetParent(null, true);
+        heldObjectRb.isKinematic = false;
+        Vector3 throwForce = (-transform.up * forwardForce);
+
+        heldObjectRb.AddForce(throwForce, ForceMode.Impulse);
+
+        charaController.Jump();
 
         heldObject = null;
         heldObjectRb = null;
