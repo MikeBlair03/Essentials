@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class LiftObject : MonoBehaviour
 {
+    public GameManager gameManager;
     public Transform carrySpace;
     public Transform throwDownSpace;
     public BetterCharacterController charaController;
@@ -12,7 +14,7 @@ public class LiftObject : MonoBehaviour
     private Rigidbody heldObjectRb;
 
     Vector3 moveDir = new Vector3(1, 0, 0);
-    private float forwardForce = 5f;
+    public float forwardForce = 5f;
     private float upwardForce = 1.5f;
 
     private bool canLift = false;
