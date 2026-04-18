@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeDisplayTxt;
     public TextMeshProUGUI bestTimeDisplayTxt;
     public GameObject newBestTime;
+    public TextMeshProUGUI scoreDisplayTxt;
+    public TextMeshProUGUI bestScoreDisplayTxt;
+    public GameObject newBestScore;
     public TextMeshProUGUI winConText;
     public AudioSource bgm;
     public Camera cam;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private float lvlTime = 0f; // time to complete the level
     private float bestTime = 0f;
+    private int bestScore = 0;
     private int lvlIndex;
 
 
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LevelTimeTracker());
         lvlIndex = SceneManager.GetActiveScene().buildIndex;
         bestTime = PlayerPrefs.GetFloat("LevelTime" + lvlIndex, 0);
+        bestScore = PlayerPrefs.GetInt("LevelScore" + lvlIndex, 0);
     }
 
     void Update()
@@ -134,6 +139,11 @@ public class GameManager : MonoBehaviour
             flip.enabled = false;
             flip1.enabled = false;
 
+            playerAnimator.SetBool("Jump", false);
+            playerAnimator.SetBool("Run", false);
+            playerAnimator.SetBool("Idle", true);
+
+
             bgm.Pause();
             cam.orthographicSize = Mathf.Clamp(3f, 3f, 5f);
             camFollow.offset = new Vector3(-camPauseOffset.x, camPauseOffset.y, camPauseOffset.z);
@@ -147,10 +157,19 @@ public class GameManager : MonoBehaviour
             else if (lvlTime > bestTime && bestTime != 0) newBestTime.SetActive(false);
             else newBestTime.SetActive(true);
 
-            timeDisplayTxt.text = "Time: " + lvlTime.ToString("F2") + "s";
-            bestTimeDisplayTxt.text = "Best: " + bestTime.ToString("F2") + "s";
-            //score and best score
-            // save best score to player prefs
+            if (playerScore.Value > bestScore)
+            {
+                PlayerPrefs.SetInt("LevelScore" + lvlIndex, playerScore.Value); // new best score display
+                bestScore = playerScore.Value;
+                newBestScore.SetActive(true);
+            }
+            else if (playerScore.Value < bestScore) newBestScore.SetActive(false);
+            else newBestScore.SetActive(true);
+
+            timeDisplayTxt.text = "-Time- \n" + lvlTime.ToString("F2") + "s";
+            bestTimeDisplayTxt.text = "-Best- \n" + bestTime.ToString("F2") + "s";
+            scoreDisplayTxt.text = "-Score- \n" + playerScore.Value;
+            bestScoreDisplayTxt.text = "-Best- \n" + bestScore;
         }
     }
 
