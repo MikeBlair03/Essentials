@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     private bool canPause = true;
     private bool playerDead = false;
 
-    private float lvlTime = 0f; // time to complete the level
+    private float lvlTime = 0f;
     private float bestTime = 0f;
     private int bestScore = 0;
     private int lvlIndex;
@@ -171,6 +171,17 @@ public class GameManager : MonoBehaviour
             scoreDisplayTxt.text = "-Score- \n" + playerScore.Value;
             bestScoreDisplayTxt.text = "-Best- \n" + bestScore;
         }
+    }
+
+    public void NextLevel()
+    {
+        int nextLevelIndex = 0;
+        if (lvlIndex != SceneManager.sceneCountInBuildSettings - 1) nextLevelIndex = lvlIndex + 1;
+        if (nextLevelIndex < SceneManager.sceneCountInBuildSettings && nextLevelIndex != 0)
+        {
+            SceneManager.LoadScene(nextLevelIndex);
+        }
+        else SceneManager.LoadScene(0);
     }
 
     public void WinConditionMet()

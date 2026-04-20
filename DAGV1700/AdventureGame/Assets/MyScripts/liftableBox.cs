@@ -4,6 +4,7 @@ using UnityEngine;
 public class liftableBox : MonoBehaviour
 {
     public GameManager gameManager;
+    public Transform respawnPoint;
     private Rigidbody rb;
     private GameObject spikes;
 
@@ -12,6 +13,16 @@ public class liftableBox : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         spikes = transform.GetChild(0).gameObject;
         StartCoroutine(TrackVelocity());
+    }
+
+    void Update()
+    {
+        if (transform.position.y < -10f)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            transform.position = respawnPoint.position;
+        }
     }
 
     IEnumerator TrackVelocity()

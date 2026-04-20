@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6334315338055595}
   - component: {fileID: 2908953496336996230}
   - component: {fileID: 6766277013201693416}
+  - component: {fileID: 5788216902150850457}
   m_Layer: 6
   m_Name: box
   m_TagString: liftable
@@ -138,6 +139,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &5788216902150850457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191506616723075502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2646dbc1225a6b4c8c4c6fe47cb7220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  respawnPoint: {fileID: 0}
 --- !u!1 &3144979186214762534
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7969618842378045518
 Transform:
   m_ObjectHideFlags: 0
